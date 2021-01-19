@@ -5,8 +5,9 @@ set -euo pipefail
 BASE_DIR=$(dirname "$0")
 
 mkdir -p "$BASE_DIR"/shtc1/sw_i2c
-cp "$BASE_DIR/../../embedded-common/"*.[ch] "$BASE_DIR"/shtc1/
-cp "$BASE_DIR/../../embedded-common/sw_i2c/"*.[ch] "$BASE_DIR"/shtc1/sw_i2c/
+cp "$BASE_DIR/../../embedded-common/common/"*.[ch] "$BASE_DIR"/shtc1/
+cp "$BASE_DIR/../../embedded-common/i2c/sensirion_i2c".[ch] "$BASE_DIR"/shtc1/
+cp "$BASE_DIR/../../embedded-common/i2c/sample-implementations/GPIO_bit_banging/"*.[ch] "$BASE_DIR"/shtc1/sw_i2c/
 cp "$BASE_DIR/../../shtc1/shtc1."[ch] "$BASE_DIR"/shtc1/
 cp "$BASE_DIR/../../sht-common/sht_git_version.h" "$BASE_DIR"/shtc1/
 gitversion=$(git describe --always --dirty)

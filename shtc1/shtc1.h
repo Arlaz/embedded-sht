@@ -41,8 +41,9 @@
 #ifndef SHTC1_H
 #define SHTC1_H
 
-#include "sensirion_arch_config.h"
+#include "sensirion_config.h"
 #include "sensirion_i2c.h"
+#include "sensirion_i2c_hal.h"
 #include "sht_git_version.h"
 
 #ifdef __cplusplus

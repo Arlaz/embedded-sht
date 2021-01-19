@@ -39,9 +39,10 @@
  */
 
 #include "sht3x.h"
-#include "sensirion_arch_config.h"
+#include "sensirion_config.h"
 #include "sensirion_common.h"
 #include "sensirion_i2c.h"
+#include "sensirion_i2c_hal.h"
 
 /* all measurement commands return T (CRC) RH (CRC) */
 #if USE_SENSIRION_CLOCK_STRETCHING

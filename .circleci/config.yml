@@ -29,12 +29,12 @@ jobs:
           name: build Linux release drivers
           command: |
               (cd release/sht3x
-               make CONFIG_I2C_TYPE=hw_i2c hw_i2c_impl_src=hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c
-               make CONFIG_I2C_TYPE=sw_i2c sw_i2c_impl_src=sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c
+               make CONFIG_I2C_TYPE=hw_i2c hw_i2c_impl_src=hw_i2c/sample-implementations/linux_user_space/sensirion_i2c_hal.c
+               make CONFIG_I2C_TYPE=sw_i2c sw_i2c_impl_src=sw_i2c/sample-implementations/linux_user_space/sensirion_i2c_gpio.c
                make clean)
               (cd release/shtc1
-               make CONFIG_I2C_TYPE=hw_i2c hw_i2c_impl_src=hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c
-               make CONFIG_I2C_TYPE=sw_i2c sw_i2c_impl_src=sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c
+               make CONFIG_I2C_TYPE=hw_i2c hw_i2c_impl_src=hw_i2c/sample-implementations/linux_user_space/sensirion_i2c_hal.c
+               make CONFIG_I2C_TYPE=sw_i2c sw_i2c_impl_src=sw_i2c/sample-implementations/linux_user_space/sensirion_i2c_gpio.c
                make clean)
 
   deploy:

@@ -31,7 +31,7 @@
 
 #ifndef SENSIRION_TEMPERATURE_UNIT_CONVERSION_H
 #define SENSIRION_TEMPERATURE_UNIT_CONVERSION_H
-#include "sensirion_arch_config.h"
+#include "sensirion_config.h"
 
 #ifdef __cplusplus
 extern "C" {

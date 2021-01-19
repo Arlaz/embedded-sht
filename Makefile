@@ -30,12 +30,16 @@ $(release_drivers): sht-common/sht_git_version.c
 	export pkgname="$${driver}-$${tag}" && \
 	export pkgdir="release/$${pkgname}" && \
 	rm -rf "$${pkgdir}" && mkdir -p "$${pkgdir}" && \
-	cp -r embedded-common/hw_i2c/ "$${pkgdir}" && \
-	cp -r embedded-common/sw_i2c/ "$${pkgdir}" && \
-	cp embedded-common/sensirion_arch_config.h "$${pkgdir}" && \
-	cp embedded-common/sensirion_common.c "$${pkgdir}" && \
-	cp embedded-common/sensirion_common.h "$${pkgdir}" && \
-	cp embedded-common/sensirion_i2c.h "$${pkgdir}" && \
+	cp -r embedded-common/i2c/ "$${pkgdir}/hw_i2c" && \
+	rm -rf "$${pkgdir}/hw_i2c/sample-implementations/GPIO_bit_banging" && \
+	rm -rf "$${pkgdir}/hw_i2c/README.md" && \
+	rm -rf "$${pkgdir}/hw_i2c/sensirion_i2c.c" && \
+	rm -rf "$${pkgdir}/hw_i2c/sensirion_i2c.h" && \
+	cp -r embedded-common/i2c/sample-implementations/GPIO_bit_banging/ "$${pkgdir}/sw_i2c" && \
+	cp embedded-common/common/sensirion_config.h "$${pkgdir}" && \
+	cp embedded-common/common/sensirion_common.h "$${pkgdir}" && \
+	cp embedded-common/i2c/sensirion_i2c.c "$${pkgdir}" && \
+	cp embedded-common/i2c/sensirion_i2c.h "$${pkgdir}" && \
 	cp -r sht-common/* "$${pkgdir}" && \
 	cp -r $${driver}/* "$${pkgdir}" && \
 	cp CHANGELOG.md LICENSE "$${pkgdir}" && \
