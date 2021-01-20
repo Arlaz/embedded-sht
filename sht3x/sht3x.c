@@ -47,18 +47,22 @@
 /* all measurement commands return T (CRC) RH (CRC) */
 #if USE_SENSIRION_CLOCK_STRETCHING
 #define SHT3X_CMD_MEASURE_HPM 0x2C06
+#define SHT3X_CMD_MEASURE_MPM 0x2C0D
 #define SHT3X_CMD_MEASURE_LPM 0x2C10
 #else /* USE_SENSIRION_CLOCK_STRETCHING */
 #define SHT3X_CMD_MEASURE_HPM 0x2400
+#define SHT3X_CMD_MEASURE_MPM 0x240B
 #define SHT3X_CMD_MEASURE_LPM 0x2416
 #endif /* USE_SENSIRION_CLOCK_STRETCHING */
 static const uint16_t SHT3X_CMD_READ_STATUS_REG = 0xF32D;
 static const uint16_t SHT3X_CMD_READ_SERIAL_ID = 0x3780;
 static const uint16_t SHT3X_CMD_DURATION_USEC = 1000;
+#define SHT_ADDRESS_PRIMARY 0x44
+#define SHT_ADDRESS_SECONDARY 0x45 // if pin 2 connected to vdd
 #ifdef SHT_ADDRESS
 static const uint8_t SHT3X_ADDRESS = SHT_ADDRESS;
 #else
-static const uint8_t SHT3X_ADDRESS = 0x44;
+static const uint8_t SHT3X_ADDRESS = SHT_ADDRESS_PRIMARY;
 #endif
 
 static uint16_t sht3x_cmd_measure = SHT3X_CMD_MEASURE_HPM;
