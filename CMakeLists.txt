@@ -5,7 +5,7 @@ idf_component_register(
             ${sht_sensor}/sht3x.c
             embedded-common/common/sensirion_common.c
             embedded-common/i2c/sensirion_i2c.c
-            embedded-common/i2c/sensirion_i2c_hal.c
+            embedded-common/i2c/sample-implementations/esp32/sensirion_i2c_hal.c
 
         INCLUDE_DIRS
             ${sht_sensor}
